@@ -151,6 +151,45 @@
 
             tap-ms = <20>;
         };
+
+ mod_morph_semicolon_colon: mod_morph_semicolon_colon_ {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MOD_MORPH_SEMICOLON_COLON";
+            bindings = <&kp SEMI>, <&kp COLON>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_RSFT)>;
+        };
+
+        mod_morph_bs_p: mod_morph_bs_p_ {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MOD_MORPH_BS_P";
+            bindings = <&kp BACKSPACE>, <&kp P>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT)>;
+        };
+
+        td_a_ctrl: td_a_ctrl_ {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_A_CTRL";
+            #binding-cells = <0>;
+            bindings = <&kp A>, <&kp LCTRL>;
+        };
+
+        hold_tap: hold_tap_ {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOLD_TAP";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <100>;
+            require-prior-idle-ms = <100>;
+            flavor = "balanced";
+        };
+
+
     };
 
     keymap {
